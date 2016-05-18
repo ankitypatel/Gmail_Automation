@@ -1,0 +1,54 @@
+***settings***
+Documentation  This test suite uses Selenium2Library to log in Gmail account
+		  ...  using correct and incorrect email address and password
+		
+library  Selenium2Library 
+
+***variables***
+${LOG_IN_URL}	        https://accounts.google.com/ServiceLogin
+${RIGHT_EMAIL_ADDRESS}	ankit7158918@gmail.com
+${WRONG_EMAIL_ADDRESS}	ankitpatel@gmail.com
+${RIGHT_PASSWORD}	    Cc7158918
+${WRONG_PASSWORD}	    Abc123467
+
+
+***testcases***
+Positive Gmail Log In Test
+	Log In Gmail  ${RIGHT_EMAIL_ADDRESS}  ${RIGHT_PASSWORD}
+	Open Gmail Application
+	Page Should Contain  Primary
+	Page Should Contain  Sent Mail
+	Page Should Contain  Last account activity
+	Log Out Gmail
+
+Negative Gmail Log In Test with Wrong Password
+	Log In Gmail  ${RIGHT_EMAIL_ADDRESS}  ${WRONG_PASSWORD}
+	Page Should Contain  The email and password you entered don't match.
+	Close Browser
+
+Negative Gmail Log In Test with Wrong Email Address
+	Log In Gmail  ${WRONG_EMAIL_ADDRESS}  ${RIGHT_PASSWORD}
+	Page Should Contain  The email and password you entered don't match.
+	Close Browser
+
+
+***keywords***
+Log In Gmail
+	[Arguments]  ${address}  ${password}
+	Open Browser  ${LOG_IN_URL}  chrome
+	Input Text  Email  ${address}
+	Click Element  next
+	Wait Until Page Contains Element  Passwd
+	Input Password  Passwd  ${password}
+	Press Key  Passwd  \\13
+	
+Open Gmail Application
+	Go To  https://mail.google.com/mail/#inbox
+
+Log Out Gmail
+	Go To  https://accounts.google.com/SignOutOptions?hl=en&continue=https://mail.google.com/mail&service=mail
+	Click Button  signout
+	Page Should Contain  Sign in
+	Close Browser
+	
+	

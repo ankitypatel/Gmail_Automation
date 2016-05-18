@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20160517 22:25:57.879" generator="Robot 3.0 (Python 2.7.11 on win32)">
+<suite source="A:\Gmail_Automation\gmail_robot.txt" id="s1" name="Gmail Robot">
+<test id="s1-t1" name="Positive Gmail Log In Test">
+<kw name="Log In Gmail">
+<arguments>
+<arg>${RIGHT_EMAIL_ADDRESS}</arg>
+<arg>${RIGHT_PASSWORD}</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOG_IN_URL}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20160517 22:25:58.067" level="INFO">Opening browser 'chrome' to base url 'https://accounts.google.com/ServiceLogin'</msg>
+<status status="PASS" endtime="20160517 22:26:05.001" starttime="20160517 22:25:58.067"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>Email</arg>
+<arg>${address}</arg>
+</arguments>
+<msg timestamp="20160517 22:26:05.001" level="INFO">Typing text 'ankit7158918@gmail.com' into text field 'Email'</msg>
+<status status="PASS" endtime="20160517 22:26:05.245" starttime="20160517 22:26:05.001"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>next</arg>
+</arguments>
+<msg timestamp="20160517 22:26:05.246" level="INFO">Clicking element 'next'.</msg>
+<status status="PASS" endtime="20160517 22:26:05.477" starttime="20160517 22:26:05.245"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>Passwd</arg>
+</arguments>
+<status status="PASS" endtime="20160517 22:26:05.543" starttime="20160517 22:26:05.478"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>Passwd</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20160517 22:26:05.544" level="INFO">Typing password into text field 'Passwd'</msg>
+<status status="PASS" endtime="20160517 22:26:05.752" starttime="20160517 22:26:05.544"></status>
+</kw>
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>Passwd</arg>
+<arg>\\13</arg>
+</arguments>
+<status status="PASS" endtime="20160517 22:26:06.478" starttime="20160517 22:26:05.753"></status>
+</kw>
+<status status="PASS" endtime="20160517 22:26:06.478" starttime="20160517 22:25:58.066"></status>
+</kw>
+<kw name="Open Gmail Application">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>https://mail.google.com/mail/#inbox</arg>
+</arguments>
+<msg timestamp="20160517 22:26:06.483" level="INFO">Opening url 'https://mail.google.com/mail/#inbox'</msg>
+<status status="PASS" endtime="20160517 22:26:15.911" starttime="20160517 22:26:06.483"></status>
+</kw>
+<status status="PASS" endtime="20160517 22:26:15.912" starttime="20160517 22:26:06.482"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Primary</arg>
+</arguments>
+<msg timestamp="20160517 22:26:15.983" level="INFO">Current page contains text 'Primary'.</msg>
+<status status="PASS" endtime="20160517 22:26:15.983" starttime="20160517 22:26:15.912"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Sent Mail</arg>
+</arguments>
+<msg timestamp="20160517 22:26:16.036" level="INFO">Current page contains text 'Sent Mail'.</msg>
+<status status="PASS" endtime="20160517 22:26:16.036" starttime="20160517 22:26:15.984"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Last account activity</arg>
+</arguments>
+<msg timestamp="20160517 22:26:16.080" level="INFO">Current page contains text 'Last account activity'.</msg>
+<status status="PASS" endtime="20160517 22:26:16.080" starttime="20160517 22:26:16.037"></status>
+</kw>
+<kw name="Log Out Gmail">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>https://accounts.google.com/SignOutOptions?hl=en&amp;continue=https://mail.google.com/mail&amp;service=mail</arg>
+</arguments>
+<msg timestamp="20160517 22:26:16.081" level="INFO">Opening url 'https://accounts.google.com/SignOutOptions?hl=en&amp;continue=https://mail.google.com/mail&amp;service=mail'</msg>
+<status status="PASS" endtime="20160517 22:26:16.479" starttime="20160517 22:26:16.081"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>signout</arg>
+</arguments>
+<msg timestamp="20160517 22:26:16.480" level="INFO">Clicking button 'signout'.</msg>
+<status status="PASS" endtime="20160517 22:26:17.851" starttime="20160517 22:26:16.479"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Sign in</arg>
+</arguments>
+<msg timestamp="20160517 22:26:17.883" level="INFO">Current page contains text 'Sign in'.</msg>
+<status status="PASS" endtime="20160517 22:26:17.883" starttime="20160517 22:26:17.851"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20160517 22:26:19.361" starttime="20160517 22:26:17.883"></status>
+</kw>
+<status status="PASS" endtime="20160517 22:26:19.362" starttime="20160517 22:26:16.081"></status>
+</kw>
+<status status="PASS" endtime="20160517 22:26:19.363" critical="yes" starttime="20160517 22:25:58.064"></status>
+</test>
+<test id="s1-t2" name="Negative Gmail Log In Test with Wrong Password">
+<kw name="Log In Gmail">
+<arguments>
+<arg>${RIGHT_EMAIL_ADDRESS}</arg>
+<arg>${WRONG_PASSWORD}</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOG_IN_URL}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20160517 22:26:19.383" level="INFO">Opening browser 'chrome' to base url 'https://accounts.google.com/ServiceLogin'</msg>
+<status status="PASS" endtime="20160517 22:26:25.884" starttime="20160517 22:26:19.382"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>Email</arg>
+<arg>${address}</arg>
+</arguments>
+<msg timestamp="20160517 22:26:25.884" level="INFO">Typing text 'ankit7158918@gmail.com' into text field 'Email'</msg>
+<status status="PASS" endtime="20160517 22:26:26.113" starttime="20160517 22:26:25.884"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>next</arg>
+</arguments>
+<msg timestamp="20160517 22:26:26.114" level="INFO">Clicking element 'next'.</msg>
+<status status="PASS" endtime="20160517 22:26:26.320" starttime="20160517 22:26:26.113"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>Passwd</arg>
+</arguments>
+<status status="PASS" endtime="20160517 22:26:26.393" starttime="20160517 22:26:26.320"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>Passwd</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20160517 22:26:26.393" level="INFO">Typing password into text field 'Passwd'</msg>
+<status status="PASS" endtime="20160517 22:26:26.592" starttime="20160517 22:26:26.393"></status>
+</kw>
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>Passwd</arg>
+<arg>\\13</arg>
+</arguments>
+<status status="PASS" endtime="20160517 22:26:27.180" starttime="20160517 22:26:26.593"></status>
+</kw>
+<status status="PASS" endtime="20160517 22:26:27.180" starttime="20160517 22:26:19.380"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>The email and password you entered don't match.</arg>
+</arguments>
+<msg timestamp="20160517 22:26:27.231" level="INFO">Current page contains text 'The email and password you entered don't match.'.</msg>
+<status status="PASS" endtime="20160517 22:26:27.232" starttime="20160517 22:26:27.181"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20160517 22:26:28.411" starttime="20160517 22:26:27.233"></status>
+</kw>
+<status status="PASS" endtime="20160517 22:26:28.413" critical="yes" starttime="20160517 22:26:19.376"></status>
+</test>
+<test id="s1-t3" name="Negative Gmail Log In Test with Wrong Email Address">
+<kw name="Log In Gmail">
+<arguments>
+<arg>${WRONG_EMAIL_ADDRESS}</arg>
+<arg>${RIGHT_PASSWORD}</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOG_IN_URL}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20160517 22:26:28.435" level="INFO">Opening browser 'chrome' to base url 'https://accounts.google.com/ServiceLogin'</msg>
+<status status="PASS" endtime="20160517 22:26:34.917" starttime="20160517 22:26:28.434"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>Email</arg>
+<arg>${address}</arg>
+</arguments>
+<msg timestamp="20160517 22:26:34.917" level="INFO">Typing text 'ankitpatel@gmail.com' into text field 'Email'</msg>
+<status status="PASS" endtime="20160517 22:26:35.132" starttime="20160517 22:26:34.917"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>next</arg>
+</arguments>
+<msg timestamp="20160517 22:26:35.132" level="INFO">Clicking element 'next'.</msg>
+<status status="PASS" endtime="20160517 22:26:35.354" starttime="20160517 22:26:35.132"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>Passwd</arg>
+</arguments>
+<status status="PASS" endtime="20160517 22:26:35.452" starttime="20160517 22:26:35.355"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>Passwd</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20160517 22:26:35.453" level="INFO">Typing password into text field 'Passwd'</msg>
+<status status="PASS" endtime="20160517 22:26:35.638" starttime="20160517 22:26:35.452"></status>
+</kw>
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>Passwd</arg>
+<arg>\\13</arg>
+</arguments>
+<status status="PASS" endtime="20160517 22:26:36.201" starttime="20160517 22:26:35.639"></status>
+</kw>
+<status status="PASS" endtime="20160517 22:26:36.202" starttime="20160517 22:26:28.432"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>The email and password you entered don't match.</arg>
+</arguments>
+<msg timestamp="20160517 22:26:36.243" level="INFO">Current page contains text 'The email and password you entered don't match.'.</msg>
+<status status="PASS" endtime="20160517 22:26:36.243" starttime="20160517 22:26:36.202"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20160517 22:26:37.489" starttime="20160517 22:26:36.244"></status>
+</kw>
+<status status="PASS" endtime="20160517 22:26:37.491" critical="yes" starttime="20160517 22:26:28.427"></status>
+</test>
+<doc>This test suite uses Selenium2Library to log in Gmail account
+using correct and incorrect email address and password</doc>
+<status status="PASS" endtime="20160517 22:26:37.507" starttime="20160517 22:25:57.883"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="3">Critical Tests</stat>
+<stat fail="0" pass="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Gmail Robot" pass="3">Gmail Robot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
