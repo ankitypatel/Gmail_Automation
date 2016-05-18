@@ -11,4 +11,4 @@ Tools     :- Python 2.7.11
 	     Selenium2Library 
 
 Note      :- To solve webdriver exception error download chromedriver 2.21 (https://sites.google.com/a/chromium.org/chromedriver/downloads)
-	     and keep it at ...\Python27\Scripts\
+	     and keep it at ...\Python27\Scripts\ .
