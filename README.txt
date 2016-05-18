@@ -10,5 +10,6 @@ Tools     :- Python 2.7.11
 	     Robot Automation Framework 3.0
 	     Selenium2Library 
 
-Note      :- To solve webdriver exception error download chromedriver 2.21 (https://sites.google.com/a/chromium.org/chromedriver/downloads)
-	     and keep it at ...\Python27\Scripts\ .
+Note      :- For webdriver exception download chromedriver 2.21 (https://sites.google.com/a/chromium.org/chromedriver/downloads)
+	     and keep it at ...\Python27\Scripts\
+
