@@ -6,9 +6,9 @@ library  Selenium2Library
 
 ***variables***
 ${LOG_IN_URL}	        https://accounts.google.com/ServiceLogin
-${RIGHT_EMAIL_ADDRESS}	ankit7158918@gmail.com
+${RIGHT_EMAIL_ADDRESS}	/*your right email id here*/
 ${WRONG_EMAIL_ADDRESS}	ankitpatel@gmail.com
-${RIGHT_PASSWORD}	    Cc7158918
+${RIGHT_PASSWORD}	/*your right password here*/
 ${WRONG_PASSWORD}	    Abc123467
 
 
